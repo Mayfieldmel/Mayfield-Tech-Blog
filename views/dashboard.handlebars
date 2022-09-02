@@ -1,0 +1,36 @@
+{{!-- create new post form --}}
+<section>
+  <h2>Create New Post</h2>
+
+  <form>
+    <div>
+      <label for="post-title">Title</label>
+      <input type="text" id="post-title" name="post-title" />
+    </div>
+    <div>
+      <label for="post-url">Link</label>
+      <input id="post-url" name="post-url" />
+    </div>
+    <button type="submit">Create</button>
+  </form>
+</section>
+{{!-- list of user posts --}}
+{{#if posts.length}}
+<section>
+  <h2>Your Posts</h2>
+  <ol>
+    {{#each posts as |post|}}
+    <li>
+      {{> post-info post}}
+      <a href="/dashboard/edit/{{post.id}}">Edit post</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+{{!-- {{#if comments.length}} --}}
+<section>
+  <a href="/dashboard/comments/"><h3> Click here to view your comments</h3></a>
+</section>
+{{!-- {{/if}} --}}
+<script src="/javascript/add-post.js"></script>

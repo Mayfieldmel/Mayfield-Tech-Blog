@@ -1,0 +1,17 @@
+{{! list of comments on single post }}
+{{!-- {{#if comments.length}} --}}
+<section>
+    <div>
+    {{#each comments as |comment|}}
+    <section>
+        <div>
+        You commented on {{post.title}} by {{post.user.username}} on {{format_date created_at}}
+        </div>
+        <div>
+        {{comment_text}}
+        </div>
+    </section>
+    {{/each}}
+    </div>
+</section>
+{{!-- {{/if}} --}}

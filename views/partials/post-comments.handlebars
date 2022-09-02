@@ -1,11 +1,11 @@
   {{! list of comments on single post }}
-<div class="comments">
+<div>
   {{#each this}}
-  <section class="comment">
-    <div class="meta">
+  <section>
+    <div>
       {{user.username}} on {{format_date created_at}}
     </div>
-    <div class="text">
+    <div>
       {{comment_text}}
     </div>
   </section>
