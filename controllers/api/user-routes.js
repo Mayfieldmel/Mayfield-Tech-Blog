@@ -119,7 +119,7 @@ router.post('/logout', (req, res) => {
 });
 
 // PUT /api/users/1
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
    // update user details
   // pass in req.body instead to only update what's passed through
   User.update(req.body, {
