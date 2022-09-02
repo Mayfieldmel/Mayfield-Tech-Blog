@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayfield Tech Blog</title>
+</head>
+<body>
+    <header> 
+       <nav>
+          {{!-- {{#if loggedIn}} --}}
+            <a href="/dashboard">dashboard</a>
+            <button id="logout" class="btn-no-style">logout</button>
+          {{!-- {{else}} --}}
+            <a href="/login">login</a>
+          {{!-- {{/if}} --}}
+        </nav> 
+        <h1>The Mayfield Tech Blog</h1>
+    </header>
+    <main>
+        {{{body}}}
+    </main>
+    <footer>Made with ❤️ by Melissa Mayfield</footer>
+</body>
+</html>
