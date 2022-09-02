@@ -1,0 +1,23 @@
+{{!-- import display single post partial --}}
+{{> post-info post}}
+
+{{!-- {{#if loggedIn}} --}}
+{{! Comment Form }}
+<form class="comment-form">
+    <div>
+    <textarea name="comment-body"></textarea>
+    </div>
+
+    <div>
+    <button type="submit">add comment</button>
+    <button type="button" class="upvote-btn">upvote</button>
+    </div>
+</form>
+{{!-- {{/if}} --}}
+
+{{!-- import list of comments partial --}}
+{{> post-comments post.comments}}
+
+{{!-- {{#if loggedIn}} --}}
+<script src="/javascript/comment.js"></script>
+{{!-- {{/if}} --}}
