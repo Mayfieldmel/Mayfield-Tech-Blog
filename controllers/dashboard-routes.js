@@ -4,7 +4,7 @@ const { Post, User, Comment, Vote } = require('../models');
 const withAuth = require('../utils/auth');
 
 // get all posts for dashboard
-router.get('/', (req, res) => { //ADD withAuth AFTER TESTING
+router.get('/', withAuth, (req, res) => { //ADD withAuth AFTER TESTING
   console.log(req.session);
   console.log('======================');
   Post.findAll({
