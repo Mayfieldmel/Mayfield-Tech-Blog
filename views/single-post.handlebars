@@ -1,9 +1,9 @@
 {{!-- import display single post partial --}}
 {{> post-info post}}
 
-{{!-- {{#if loggedIn}} --}}
+{{#if loggedIn}}
 {{! Comment Form }}
-<form>
+<form id="add-comment">
     <div>
     <textarea name="comment-body"></textarea>
     </div>
@@ -12,11 +12,11 @@
     <button type="submit">add comment</button>
     </div>
 </form>
-{{!-- {{/if}} --}}
+{{/if}}
 
 {{!-- import list of comments partial --}}
 {{> post-comments post.comments}}
 
-{{!-- {{#if loggedIn}} --}}
+{{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
-{{!-- {{/if}} --}}
+{{/if}}

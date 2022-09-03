@@ -90,8 +90,7 @@ router.get('/comments', (req, res) => { //ADD withAuth AFTER TESTING
     console.log('======================');
     Comment.findAll({
       where: {
-        user_id: 3
-      //   req.session.user_id
+        user_id: req.session.user_id
       },
       attributes: [
         'id',
