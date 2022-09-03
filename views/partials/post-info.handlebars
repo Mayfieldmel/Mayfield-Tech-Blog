@@ -2,11 +2,13 @@
 <article>
   <div>
     <a href="/post/{{id}}">{{title}}</a>
-    <span><a href="{{post_url}}" target="_blank">({{format_url post_url}})</a></span>
+  </div>
+  <div>
+    <p>{{post_content}}</p>
   </div>
   <div>
      by {{user.username}} on {{format_date created_at}}
     |
-    <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+    {{comments.length}} {{format_plural "comment" comments.length}}
   </div>
 </article>

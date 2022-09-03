@@ -14,8 +14,8 @@ router.get('/', withAuth, (req, res) => {
     },
     attributes: [
       'id',
-      'post_url',
       'title',
+      'post_content',
       'created_at',
     ],
     include: [
@@ -44,13 +44,20 @@ router.get('/', withAuth, (req, res) => {
     });
 });
 
+// GET /dashboard/add-post
+router.get('/add-post', withAuth, (req, res) => {
+    // get single post
+        res.render('add-post', {
+          loggedIn: true
+        });
+});
 // GET /dashboard/edit/1
 router.get('/edit/:id', withAuth, (req, res) => {
     // get single post
   Post.findByPk(req.params.id, {
     attributes: [
       'id',
-      'post_url',
+      'post_content',
       'title',
       'created_at',
     ],
@@ -110,7 +117,7 @@ router.get('/comments', withAuth, (req, res) => {
           },
           {
               model: Post,
-              attributes: ['id', 'post_url', 'title', 'created_at',],
+              attributes: ['id', 'title', 'created_at',],
               include: {
               model: User,
               attributes: ['username']
@@ -141,7 +148,7 @@ router.get('/edit-comment/:id', withAuth, (req, res) => {
           },
           {
             model: Post,
-            attributes: ['id', 'post_url', 'title', 'created_at',],
+            attributes: ['id', 'title', 'created_at',],
             include: {
             model: User,
             attributes: ['username']
