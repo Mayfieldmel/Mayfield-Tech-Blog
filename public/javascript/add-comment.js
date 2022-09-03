@@ -1,3 +1,4 @@
+// create a comment
 async function commentFormHandler(event) {
     event.preventDefault();
   
@@ -30,3 +31,4 @@ async function commentFormHandler(event) {
   }
   
   document.querySelector('#add-comment').addEventListener('submit', commentFormHandler);
+

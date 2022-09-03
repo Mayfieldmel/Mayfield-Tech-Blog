@@ -1,0 +1,18 @@
+{{!-- edit comment form --}}
+<article>
+  <a href="/dashboard"> &larr; Back to dashboard</a>
+  <h2>
+    Edit comment
+  </h2>
+  <form id="edit-comment-form">
+    <div>
+      <input name="comment-title" type="text" value="{{comment.comment_text}}" />
+      <span>({{format_url comment.comment_url}})</span>
+    </div>
+    <button type="submit">Save comment</button>
+    <button type="button" class="delete-comment-btn">Delete comment</button>
+  </form>
+</article>
+{{#if loggedIn}}
+<script src="/javascript/edit-comment.js"></script>
+{{/if}}

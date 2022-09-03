@@ -1,17 +1,24 @@
 {{! list of comments on single post }}
 {{#if comments.length}}
 <section>
-    <div>
+    <ol>
     {{#each comments as |comment|}}
-    <section>
+    <li>
         <div>
-        You commented on {{post.title}} by {{post.user.username}} on {{format_date created_at}}
+        You commented on 
+        <a href="{{post.post_url}}">{{post.title}}</a>
+        by {{post.user.username}} on {{format_date created_at}}
         </div>
         <div>
         {{comment_text}}
         </div>
-    </section>
+        <a id="get-comment" href="/dashboard/comments/{{comment.id}}">Edit comment</a>
+    </li>
     {{/each}}
-    </div>
+    </ol>
 </section>
+{{else}}
+    <div>You have have not made any comments yet.</div>
+    <a href="/dashboard">Click here to go back to your dashboard.</a>
 {{/if}}
+<script src="/javascript/comment.js"></script>

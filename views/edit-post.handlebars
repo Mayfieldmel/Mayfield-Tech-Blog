@@ -1,0 +1,19 @@
+{{!-- edit post form --}}
+<article>
+  <h2>
+    Edit Post
+  </h2>
+  <form id="edit-post-form">
+    <div>
+      <input name="post-title" type="text" value="{{post.title}}" />
+      <input name="post-url" type="test" value="{{format_url post.post_url}}" />
+    </div>
+    <button type="submit" id="edit-post-btn">Save post</button>
+    <button type="button" id="delete-post-btn">Delete post</button>
+  </form>
+</article>
+
+{{!-- js scripts --}}
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
+<script src="/javascript/add-comment.js"></script>

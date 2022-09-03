@@ -1,16 +1,16 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Post, User, Comment, Vote } = require('../models');
+const { Post, User, Comment} = require('../models');
 const withAuth = require('../utils/auth');
 
-// get all posts for dashboard
-router.get('/', withAuth, (req, res) => { //ADD withAuth AFTER TESTING
+
+router.get('/', withAuth, (req, res) => {
   console.log(req.session);
   console.log('======================');
+  // get all posts for dashboard
   Post.findAll({
     where: {
-      user_id: 3
-    //   req.session.user_id
+      user_id: req.session.user_id
     },
     attributes: [
       'id',
@@ -44,8 +44,9 @@ router.get('/', withAuth, (req, res) => { //ADD withAuth AFTER TESTING
     });
 });
 
-// get single post
-router.get('/edit/:id', (req, res) => {
+// GET /dashboard/edit/1
+router.get('/edit/:id', withAuth, (req, res) => {
+    // get single post
   Post.findByPk(req.params.id, {
     attributes: [
       'id',
@@ -70,8 +71,9 @@ router.get('/edit/:id', (req, res) => {
   })
     .then(dbPostData => {
       if (dbPostData) {
+        // serialize data
         const post = dbPostData.get({ plain: true });
-        
+        // render template
         res.render('edit-post', {
           post,
           loggedIn: true
@@ -85,9 +87,11 @@ router.get('/edit/:id', (req, res) => {
     });
 });
 
-router.get('/comments', (req, res) => { //ADD withAuth AFTER TESTING
+// GET /dashboard/comments
+router.get('/comments', withAuth, (req, res) => { 
     console.log(req.session);
     console.log('======================');
+    // get all user comments
     Comment.findAll({
       where: {
         user_id: req.session.user_id
@@ -114,13 +118,51 @@ router.get('/comments', (req, res) => { //ADD withAuth AFTER TESTING
           }
       ]
     })
-      .then(dbcommentData => {
+      .then(dbCommentData => {
           // serialize data
-        const comments = dbcommentData.map(comment => comment.get({ plain: true }));
+        const comments = dbCommentData.map(comment => comment.get({ plain: true }));
         res.render('user-comments', { comments, loggedIn: true });
       })
       .catch(err => {
         console.log(err);
+        res.status(500).json(err);
+      });
+  });
+
+// GET /dashboard/edit-comment/1
+router.get('/edit-comment/:id', withAuth, (req, res) => {
+      // get single comment
+    Comment.findByPk(req.params.id, {
+      attributes: ['id', 'comment_text', 'comment_id', 'user_id', 'created_at'],
+      include: [
+          {
+              model: User,
+              attributes: ['username']
+          },
+          {
+            model: Post,
+            attributes: ['id', 'post_url', 'title', 'created_at',],
+            include: {
+            model: User,
+            attributes: ['username']
+            }
+          } 
+      ]
+    })
+      .then(dbCommentData => {
+        if (dbCommentData) {
+            // serialize data
+          const comment = dbCommentData.get({ plain: true });
+        //   render template
+          res.render('edit-comment', {
+            post,
+            loggedIn: true
+          });
+        } else {
+          res.status(404).end();
+        }
+      })
+      .catch(err => {
         res.status(500).json(err);
       });
   });

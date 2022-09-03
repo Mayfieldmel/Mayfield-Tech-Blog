@@ -1,4 +1,4 @@
-const {format_date, format_plural, format_url} = require('../utils/helpers');
+const {format_date, format_plural, format_url, isUser} = require('../utils/helpers');
 
 test('format_date() returns a date string', () => {
     const date = new Date('2020-03-20 16:12:03');
@@ -19,3 +19,6 @@ test('format_date() returns a date string', () => {
     expect(url2).toBe('coolstuff.com');
     expect(url3).toBe('google.com');
   });
+
+
+

@@ -1,0 +1,14 @@
+{{! Comment Form }}
+<form>
+    <div>
+    <textarea name="comment-body"></textarea>
+    </div>
+
+    <div>
+    <button id="add-comment" type="submit">add comment</button>
+    </div>
+</form>
+{{#if loggedIn}}
+<script src="/javascript/add-comment.js"></script>
+{{/if}}
+

@@ -3,20 +3,11 @@
 
 {{#if loggedIn}}
 {{! Comment Form }}
-<form id="add-comment">
-    <div>
-    <textarea name="comment-body"></textarea>
-    </div>
-
-    <div>
-    <button type="submit">add comment</button>
-    </div>
-</form>
+{{> add-comment comment}}
 {{/if}}
 
 {{!-- import list of comments partial --}}
 {{> post-comments post.comments}}
-
 {{#if loggedIn}}
-<script src="/javascript/comment.js"></script>
+<script src="/javascript/add-comment.js"></script>
 {{/if}}
