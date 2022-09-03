@@ -133,7 +133,7 @@ router.get('/comments', withAuth, (req, res) => {
 router.get('/edit-comment/:id', withAuth, (req, res) => {
       // get single comment
     Comment.findByPk(req.params.id, {
-      attributes: ['id', 'comment_text', 'comment_id', 'user_id', 'created_at'],
+      attributes: ['id', 'comment_text', 'user_id', 'created_at'],
       include: [
           {
               model: User,
@@ -155,7 +155,7 @@ router.get('/edit-comment/:id', withAuth, (req, res) => {
           const comment = dbCommentData.get({ plain: true });
         //   render template
           res.render('edit-comment', {
-            post,
+            comment,
             loggedIn: true
           });
         } else {

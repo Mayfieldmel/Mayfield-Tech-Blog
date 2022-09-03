@@ -11,7 +11,6 @@ async function editComment() {
          {
           method: 'PUT',
           body: JSON.stringify({
-          id,
           comment_text
           }),
           headers: {

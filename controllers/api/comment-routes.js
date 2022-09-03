@@ -68,17 +68,16 @@ router.post('/', withAuth, (req, res) => {
 });
 
 // PUT /api/comments/1
-router.put('/:id', withAuth, (res, req) => { // REMOVE WITH AUTH TO TEST
+router.put('/:id', (res, req) => { // ADD WITH AUTH AFTER TEST
     // edit comment
-    Comment.update({
+    Comment.update(req.body, {
         where: {
             id: req.params.id
-        },
-        attributes: ['comment_text']
+        }
     })
     .then(dbCommentData => {
         if(!dbCommentData) {
-            res.status(404).json({ message: 'No comment found with this id!'});
+            res.status(404).json({ message: 'No comment found with this id!' });
             return;
         }
         res.json(dbCommentData);
