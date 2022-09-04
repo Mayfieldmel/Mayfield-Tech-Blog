@@ -2,7 +2,7 @@
 {{!-- import display single post partial --}}
 {{> post-info post}}
 <a href="/dashboard/edit/{{post.id}}">Edit post</a>
-<a href="/dashboard/edit/{{post.id}}">Delete post</a>
+<button type="button" id="delete-post-btn">Delete post</button>
 
 {{> add-comment}}
 
