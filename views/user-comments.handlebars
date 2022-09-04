@@ -6,13 +6,13 @@
     <li>
         <div>
         You commented on 
-        <a href="{{post.post_url}}">{{post.title}}</a>
+        <a href="/post/{{post.id}}">{{post.title}}</a>
         by {{post.user.username}} on {{format_date created_at}}
         </div>
         <div>
         {{comment_text}}
         </div>
-        <a id="get-comment" href="/dashboard/edit-comment/{{comment.id}}">Edit comment</a>
+        <a id="get-comment" href="/dashboard/edit-comment/{{comment.id}}">Edit/delete comment</a>
     </li>
     {{/each}}
     </ol>
@@ -21,4 +21,3 @@
     <div>You have have not made any comments yet.</div>
     <a href="/dashboard">Click here to go back to your dashboard.</a>
 {{/if}}
-<script src="/javascript/comment.js"></script>

@@ -20,7 +20,7 @@ async function editComment() {
       );
   
       if (response.ok) {
-          resp
+        document.location.replace('/dashboard');
       } else {
           alert(response.statusText);
       }

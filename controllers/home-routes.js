@@ -25,6 +25,15 @@ router.get('/login', (req, res) => {
     res.render('login');
   });
 
+// GET /sign-up
+router.get('/sign-up', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+      }
+    res.render('sign-up');
+  });
+
 //   GET /post/1
   router.get('/post/:id', (req, res) => {
     // get single post
