@@ -1,14 +1,19 @@
+{{#if loggedIn}}
 {{!-- import display single post partial --}}
 {{> post-info post}}
+<a href="/dashboard/edit/{{post.id}}">Edit post</a>
+<a href="/dashboard/edit/{{post.id}}">Delete post</a>
 
-{{#if loggedIn}}
 {{> add-comment}}
-{{/if}}
 
  <h3>{{post.comments.length}} {{format_plural "comment" post.comments.length}}</h3>
 {{!-- import list of comments partial --}}
 {{> post-comments post.comments}}
 
-{{#if loggedIn}}
+{{!-- js scripts --}}
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
 <script src="/javascript/add-comment.js"></script>
 {{/if}}
+
+

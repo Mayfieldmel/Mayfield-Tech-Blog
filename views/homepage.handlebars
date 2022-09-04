@@ -1,8 +1,17 @@
 <h1>The Mayfield Tech Blog</h1>
 <ul>
+  {{!-- display list of posts --}}
   {{#each posts as |post|}}
   <li>
-    {{> post}}
+    {{!-- display single post --}}
+    <article>
+      <div>
+        <a href="/post/{{id}}">{{title}}</a>
+      </div>
+      <div>
+        posted on {{format_date created_at}}
+      </div>
+    </article>
   </li>
   {{/each}}
 </ul>

@@ -7,10 +7,18 @@
 <section>
   <h2>Your Posts</h2>
   <ol>
+    {{!-- display list of user posts --}}
     {{#each posts as |post|}}
     <li>
-      {{> post}}
-      <a href="/dashboard/edit/{{post.id}}">Edit post</a>
+      {{!-- display single post --}}
+        <article>
+        <div>
+            <a href="dashboard/post/{{id}}">{{title}}</a>
+        </div>
+        <div>
+            posted on {{format_date created_at}}
+        </div>
+        </article>
     </li>
     {{/each}}
   </ol>
