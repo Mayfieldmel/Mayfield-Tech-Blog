@@ -9,10 +9,7 @@
  <h3>{{post.comments.length}} {{format_plural "comment" post.comments.length}}</h3>
 {{!-- import list of comments partial --}}
 {{> post-comments post.comments}}
-{{else}}
-{{> login-form}}
-{{/if}}
-{{#if}}
+
 {{!-- js scripts --}}
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>

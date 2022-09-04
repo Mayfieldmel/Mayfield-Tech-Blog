@@ -44,6 +44,7 @@ router.get('/', withAuth, (req, res) => {
     });
 });
 
+
 // GET /dashboard/add-post
 router.get('/add-post', withAuth, (req, res) => {
     // get single post
