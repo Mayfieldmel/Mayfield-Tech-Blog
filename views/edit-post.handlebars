@@ -6,7 +6,7 @@
   <form id="edit-post-form">
     <div>
       <input name="post-title" type="text" value="{{post.title}}" />
-      <textarea name="post-content" placeholder="{{post.post-content}}"></textarea>
+      <input name="post-content" value="{{post.post_content}}"></input>
     </div>
     <button type="submit" id="edit-post-btn">Save post</button>
     <button type="button" id="delete-post-btn">Delete post</button>
@@ -16,3 +16,4 @@
 {{!-- js scripts --}}
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>
+

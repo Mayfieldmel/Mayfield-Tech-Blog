@@ -1,5 +1,6 @@
 //   edit a comment
 async function editComment() {
+    const comment_text = document.querySelector('input[name="comment-text"]').value.trim();
     var id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
       ];

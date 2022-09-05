@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mayfield Tech Blog</title>
-</head>
-<body>
-    <header> 
-       <nav>
-            <a href="/home">Home</a>
-            <a href="/dashboard">Dashboard</a>
-          {{#if loggedIn}}
-            <button id="logout">Logout</button>
-          {{else}}
-            <a href="/login">Login</a>
-          {{/if}}
-        </nav> 
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    </link>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div>
+          <a href="/home">Home</a>
+          <a href="/dashboard">Dashboard</a>
+        </div>
+        {{#if loggedIn}}
+        <button id="logout" class="btn-no-style">Logout</button>
+        {{else}}
+        <a href="/login">Login</a>
+        {{/if}}
+      </nav>
+      <h1>
+        <a href="/" class="blog-title">The Mayfield Tech Blog</a>
+      </h1>
     </header>
     <main>
-        {{{body}}}
+      {{{body}}}
     </main>
     <footer>Made with ❤️ by Melissa Mayfield</footer>
     {{#if loggedIn}}
-      <script src="/javascript/logout.js"></script>
+    <script src="/javascript/logout.js"></script>
     {{/if}}
-</body>
+  </body>
 </html>
