@@ -1,12 +1,13 @@
+
 {{!-- display single post --}}
-<article>
-  <div>
-    <h2>{{title}}</h2>
-  </div>
-  <div>
-     by {{user.username}} on {{format_date created_at}}
-  </div>
-  <div>
-  <p>{{post_content}}</p>
-  </div>
-</article>
+<a href="/post/{{id}}">
+  <article>
+    <div class="title">
+      <h2>{{title}}</h2>
+      by {{user.username}} on {{format_date created_at}}
+    </div>
+    <div class="content">
+      <p>{{post_content}}</p>
+    </div>
+  </article>
+</a>

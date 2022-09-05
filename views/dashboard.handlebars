@@ -1,29 +1,31 @@
 {{!-- list of user posts --}}
-<h1>DASHBOARD</h1>
-<div>
-    <a href="/dashboard/add-post">Create a Post</a>
+<h1 class="dashboard">DASHBOARD</h1>
+<div class="center-btn">
+    <a href="/dashboard/add-post">
+        <button>+ New Post</button>
+    </a>
 </div>
 {{#if posts.length}}
 <section>
-  <h2>Your Posts</h2>
+  <h2 class="dash-heading">Your Posts:</h2>
   <ol>
     {{!-- display list of user posts --}}
     {{#each posts as |post|}}
-    <li>
+    <li class="item post">
       {{!-- display single post --}}
-        <article>
-        <div>
-            <a href="dashboard/post/{{id}}">{{title}}</a>
-        </div>
-        <div>
-            posted on {{format_date created_at}}
-        </div>
-        </article>
+        <a href="dashboard/post/{{id}}">
+            <article>
+                <div class="title">
+                    <h2>{{title}}</h2>
+                    {{format_date created_at}} | {{post.comments.length}} {{format_plural "comment" post.comments.length}}
+                </div>
+            </article>
+        </a>
     </li>
     {{/each}}
   </ol>
 </section>
 {{/if}}
-<section>
+<section class="center-btn">
   <a href="/dashboard/comments/"><h3> Click here to view your comments</h3></a>
 </section>

@@ -1,6 +1,7 @@
 :root {
     --primary-color:#f4ebf5;
-    --secondary-color:#343d54;
+    --secondary-color:#0a1941;
+    --tertiary-color: white;
 }
 
 /* general application */
@@ -18,7 +19,7 @@ a:hover {
 textarea, input {
     padding: .5%;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--tertiary-color);
 }
   
 textarea:focus, input:focus {
@@ -39,13 +40,27 @@ form label {
     display: block;
 }
 
+button{
+background-color: var(--secondary-color);
+border-radius: 10px;
+border: 2px solid var(--primary-color);
+color: var(--tertiary-color);
+padding: 10px;
+}
+
+button:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-weight: bolder;
+}
+
 .btn-no-style {
     background: none;
     border: none;
     padding: 0;
     cursor: pointer;
     text-decoration: none;
-    color: white;
+    color: var(--tertiary-color);
     font-size: 100%;
     font-weight: bold;
     transition: color .1s;
@@ -67,6 +82,7 @@ body, html {
     background-color: var(--primary-color);
   }
 
+
 /* main.handlebars template*/
 main {
     margin: 10px;
@@ -74,7 +90,7 @@ main {
 
 header {
     background-color: var(--secondary-color);
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--tertiary-color);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -83,16 +99,16 @@ header {
 }
 
 header a {
-    color: white;
+    color: var(--tertiary-color)
 }
 
 .blog-title {
 display: inline-flex;
-border: 2px solid var(--primary-color);
-border-radius: 20%;
+border: 4px solid var(--primary-color);
+border-radius: 5px;
 padding: 10px;
 margin-top: 10px;
-background-color: var(--primary-color);
+background-color: var(--tertiary-color);
 color: var(--secondary-color);
 }
 
@@ -115,15 +131,23 @@ nav div {
     justify-content: space-between;
 }
 
-/* homepage.handlebars template */
-.post-list {
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* homepage.handlebars templates */
+.item {
     list-style-type: none;
     border: 2px solid var(--secondary-color);
     margin: 10px 0;
     margin-right: 30px;
+    margin-left: 20px;
+    background-color: var(--tertiary-color)
 }
 
-.post-title {
+.title {
     display: flex;
     justify-content: space-between;
     background-color: var(--secondary-color);
@@ -131,11 +155,126 @@ nav div {
     padding: 10px;
 }
 
-.post-title a {
+.title a {
     color: var(--primary-color)
 }
 
-.post-content p {
-    padding-left: 10px;
+.title h2 {
+    margin: 0;
+    font-size: 20px;
 }
 
+.content {
+    padding: 0 30px;
+    color: var(--secondary-color)
+}
+
+/* login, sign-up, & */ 
+.login {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.text-box {
+    border: 2px solid var(--secondary-color);
+    width: 97%;
+    background-color: var(--tertiary-color);
+}
+
+.btn {
+    width: 98%;
+    font-size: 16px;
+    border: 4px solid var(--secondary-color);
+}
+
+.signup-link {
+    text-align: center;
+}
+
+
+/* single-post.handlebars template */
+
+.comment {
+    font-size: 14px;
+    padding: 0 10px;
+}
+
+#add-comment-form {
+    padding: 10px;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+.comment-header {
+    margin: 20px;
+    text-decoration: underline;
+}
+
+.comments {
+    background-color: var(--secondary-color);
+    color: var(--tertiary-color);
+    padding: 10px;
+    
+}
+
+.byline {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 10px 40px;
+
+}
+
+/* dashboard.handlebars template */
+.dashboard {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.center-btn {
+    text-align: center;
+}
+
+.dash-heading {
+    margin-left: 50px
+}
+
+
+.post {
+    border-radius: 10px;
+    border: 3px solid var(--secondary-color);
+    background-color: var(--secondary-color);
+    
+}
+
+/* user-comments.handlebars template */
+.comments {
+    padding: 5px;
+    justify-content: start;
+    color: var(--primary-color)
+}
+
+.post-link {
+    text-decoration: underline;
+    margin: 0px 5px;
+}
+
+.comment-text {
+    padding-top: 10px
+}
+
+.right-btn {
+    text-align: right;
+}
+
+
+/* edit-post.handlebars template */
+.post-content {
+    height: 100px;
+}
+
+.delete {
+    margin: 10px 0px;
+
+}

@@ -1,11 +1,13 @@
-{{!-- import display single post partial --}}
-{{> post-info post}}
+{{!-- import single post partial--}}
+<div class="item">
+    {{> post-info post}}
+</div>
 
 {{#if loggedIn}}
+{{!-- comment form --}}
 {{> add-comment}}
 {{/if}}
 
- <h3>{{post.comments.length}} {{format_plural "comment" post.comments.length}}</h3>
 {{!-- import list of comments partial --}}
 {{> post-comments post.comments}}
 

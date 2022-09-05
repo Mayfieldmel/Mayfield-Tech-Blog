@@ -1,13 +1,16 @@
   {{! list of comments on single post }}
-<div>
+<section>
+  <div class="comment-header">
+    <h3>{{length}} {{format_plural "comment" length}}</h3>
+  </div>
   {{#each this}}
-  <section>
-    <div>
-      {{user.username}} on {{format_date created_at}}
-    </div>
-    <div>
+  <article class="item">
+    <div class="content comments">
       {{comment_text}}
     </div>
-  </section>
+    <div class="content byline">
+      - {{user.username}} on {{format_date created_at}}
+    </div>
+  </article>
   {{/each}}
-</div>
+</section>

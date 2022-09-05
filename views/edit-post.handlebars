@@ -1,15 +1,19 @@
 {{!-- edit post form --}}
-<article>
-  <h2>
-    Edit Post
-  </h2>
-  <form id="edit-post-form">
+<article class="item">
+  <div class="title login">
+    <h2>Edit Post</h2>
+  </div>
+  <form id="edit-post-form" class="content">
     <div>
-      <input name="post-title" type="text" value="{{post.title}}" />
-      <input name="post-content" value="{{post.post_content}}"></input>
+      <label for="post-title">Title</label>
+      <input name="post-title" type="text" value="{{post.title}}" class="text-box"/>
     </div>
-    <button type="submit" id="edit-post-btn">Save post</button>
-    <button type="button" id="delete-post-btn">Delete post</button>
+    <div>
+      <label for="post0-content">Content</label>
+      <input name="post-content" value="{{post.post_content}}" class="text-box post-content"/>
+    </div class="btns">
+      <button type="submit" id="edit-post-btn" class="btn">Update post</button>
+      <button type="button" id="delete-post-btn" class="btn delete">Delete post</button>
   </form>
 </article>
 

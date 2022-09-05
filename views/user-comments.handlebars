@@ -3,16 +3,20 @@
 <section>
     <ol>
     {{#each comments as |comment|}}
-    <li>
-        <div>
-        You commented on 
-        <a href="/post/{{post.id}}">{{post.title}}</a>
-        by {{post.user.username}} on {{format_date created_at}}
+    <li class="item">
+        <div class="title comments">
+            You commented on 
+            <a href="/post/{{post.id}}" class="post-link">{{post.title}}</a>
+            by {{post.user.username}} on {{format_date created_at}}
         </div>
-        <div>
+        <div class="content comment-text">
         {{comment_text}}
         </div>
-        <a id="get-comment" href="/dashboard/edit-comment/{{comment.id}}">Edit/delete comment</a>
+        <div class="right-btn">
+            <a id="get-comment" href="/dashboard/edit-comment/{{comment.id}}">
+                <button>Edit/delete comment</button>
+            </a>
+        </div>
     </li>
     {{/each}}
     </ol>

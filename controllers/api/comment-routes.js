@@ -68,7 +68,7 @@ router.post('/', withAuth, (req, res) => {
 });
 
 // PUT /api/comments/1
-router.put('/:id', (req, res) => { // ADD WITH AUTH AFTER TEST
+router.put('/:id', withAuth, (req, res) => { // ADD WITH AUTH AFTER TEST
 
     // edit comment
     Comment.update(req.body, {
