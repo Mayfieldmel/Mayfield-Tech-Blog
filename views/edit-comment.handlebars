@@ -1,15 +1,15 @@
 {{#if loggedIn}}
 {{!-- edit comment form --}}
-<article>
-  <h2>
-    Edit comment
-  </h2>
-  <form id="edit-comment-form">
+<article class="item">
+  <div class="title form">
+    <h2>Edit comment</h2>
+  </div>
+  <form id="edit-comment-form" class="content">
     <div>
-      <input name="comment-text" type="text" value="{{comment.comment_text}}"></input>
+      <input name="comment-text" type="text" value="{{comment.comment_text}}" class="text-box"></input>
     </div>
-    <button type="submit">Save comment</button>
-    <button type="button" id="delete-comment-btn">Delete comment</button>
+    <button type="submit" class="btn long">Save comment</button>
+    <button type="button" id="delete-comment-btn" class="btn long">Delete comment</button>
   </form>
 </article>
 
