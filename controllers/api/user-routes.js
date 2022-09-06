@@ -80,7 +80,7 @@ router.post('/login', (req, res) => {
   // LOGIN
   User.findOne({
     where: {
-      email: req.body.email
+      username: req.body.username
     }
   }).then(dbUserData => {
     if (!dbUserData) {
