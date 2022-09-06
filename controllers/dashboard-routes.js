@@ -171,7 +171,10 @@ router.get('/comments', withAuth, (req, res) => {
               attributes: ['username']
               }
           }
-      ]
+      ],
+      order: [
+        ['created_at', 'DESC']
+    ]
     })
       .then(dbCommentData => {
           // serialize data

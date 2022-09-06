@@ -58,7 +58,7 @@ router.get('/sign-up', (req, res) => {
           include: {
             model: User,
             attributes: ['username']
-          }
+          },
         }
       ]
     })
