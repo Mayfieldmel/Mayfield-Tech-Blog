@@ -170,7 +170,7 @@ footer {
 }
 
 /* login, sign-up, & */ 
-.login {
+.form {
     margin-bottom: 20px;
     font-size: 16px;
 }
@@ -268,13 +268,13 @@ label {
     text-align: right;
 }
 
-
 /* edit-post.handlebars template */
 .post-content {
     height: 100px;
 }
 
-.delete {
+.long {
     margin: 10px 0px;
 
 }
+
