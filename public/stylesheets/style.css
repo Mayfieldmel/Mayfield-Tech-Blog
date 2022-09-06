@@ -193,7 +193,6 @@ footer {
 
 
 /* single-post.handlebars template */
-
 .comment {
     font-size: 14px;
     padding: 0 10px;
@@ -239,7 +238,6 @@ label {
 .dash-heading {
     margin-left: 50px
 }
-
 
 .post {
     border-radius: 10px;
