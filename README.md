@@ -4,7 +4,7 @@ This repo houses the code used to build the Mayfield Tech Blog available at http
 
 ![Mayfield-Tech-Blog-screenshot](./assets/images/mayfield-tech-blog-screenshot.png)
 
-## The Blogg
+## The Blog
 
 The Mayfield Tech Blog app provides a secure platform for users to blog about the latests trends in technology. Users can sign-up, login, post blog entries, comment on blog entries, and maintain their own personal dashboard. 
 
